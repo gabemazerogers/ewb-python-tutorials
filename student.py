@@ -7,7 +7,10 @@ class Student(object):
 
     def enroll(self, course):
         self.courses.append(course)
-        
+
+    def drop(self, course):
+        self.courses.remove(course)
+          
     def introduction(self):
         print "Hello! My name is %s, and I'm a %s major. My GPA is %s." % (self.name, self.major, self.gpa)
 
