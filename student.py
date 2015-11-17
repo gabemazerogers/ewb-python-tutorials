@@ -16,7 +16,10 @@ class Student(object):
         if(self.courses == None):
             self.courses = []
         for course in courses:
-            self.courses.remove(course)
+            if course in self.courses:
+                self.courses.remove(course)
+            else:
+                continue
 
     def introduction(self):
         print "My name is %s, and I'm a %s major. My GPA is %s." % (self.name, self.major, "nothing because I haven't taken any classes yet" if(self.gpa == None) else self.gpa)
@@ -44,3 +47,4 @@ gabe.introduction()
 gabe.calculate_GPA(['A','B','C'])
 gabe.enroll("English", "Math")
 gabe.print_courses()
+gabe.drop("Chemistry")
